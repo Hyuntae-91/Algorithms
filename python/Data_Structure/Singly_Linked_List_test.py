@@ -8,3 +8,5 @@ for i in range(1, 11):
     list1.list_add(i)
 
 list1.list_size()
+list1.list_remove(5)
+list1.list_size()
