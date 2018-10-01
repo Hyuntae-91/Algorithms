@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 class Node: 
+    data = -1
+    next = None
     def __init__(self, data):
         self.data = data
         self.next = None
@@ -16,10 +18,11 @@ class Singly_Linked_List:
     def list_add(self, data):
         newNode = Node(data) # Create New Node to add
         if self.head == None: # if head Node is empty
-            self.head = newNode # Set head pointer to New Node
+            self.head = newNode # Set head point to New Node
             self.tail = newNode 
         else:
-            self.tail = newNode # Set tail pointer to New Node
+            self.tail.next = newNode # Set tail's next node to New Node
+            self.tail = newNode # Set tail point to New Node
         self.count += 1 # Increase size by 1
     def list_remove(self, data):
         pointer = self.head # set pointer as head
@@ -30,6 +33,7 @@ class Singly_Linked_List:
             if pointer.next.data == data: # if next Node's data is same with data which want to delete
                 pointer.next = pointer.next.next # point current Node's next pointer to next next Node
                 print("Remove successfully")
+                self.count -= 1
                 return 
             pointer = pointer.next # Keep search next datas
         if pointer.next == None: # It means, there are no data which want to delete
