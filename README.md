@@ -6,7 +6,7 @@ Developed Enviroment<br>
     - Neovim<br>
 
 
-Developed Language<br>
+Developing Language<br>
     - Python 3.6.4<br>
 
 
