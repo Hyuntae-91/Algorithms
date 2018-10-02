@@ -9,6 +9,7 @@ Abstract Data Type
             : init() - Initiate Linked List
               list_add(self, data) - Add new Node at the List
               list_remove(self, data) - Delete Node at the List
+              list_print(self) - Print whole data on the list
               list_size(self) - Return to the List Size
               is_empty(self) - If the List empty, return True, if not, return False
             
