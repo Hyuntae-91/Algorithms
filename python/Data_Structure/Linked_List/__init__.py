@@ -1,1 +1,2 @@
-__all__=['Singly_Linked_List']
+__all__=['Singly_Linked_List', 'Doubly_Linked_List']
+
