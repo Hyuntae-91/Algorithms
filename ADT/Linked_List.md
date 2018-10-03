@@ -15,6 +15,7 @@ Abstract Data Type
             
         + If I want to add new function ( not scheduled )
             : Sort() - sort the list
+              list_search(self, data) - search data function 
               list_add_at_middle(self, data) - add data at the middle of the List
                 - list_add_at_head(self, data)
                   list_add_at_tail(self, data)
