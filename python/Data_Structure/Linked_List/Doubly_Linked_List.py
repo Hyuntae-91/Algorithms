@@ -14,7 +14,8 @@ class Doubly_Linked_List:
         self.tail = Node(None) # dummy node
         self.head.next = self.tail
         self.count = 0
-    def list_add(self, data):
+
+    def append(self, data):
         newNode = Node(data) # Create New Node to add
         pointer = self.head
         while pointer.next is not self.tail:
@@ -24,7 +25,8 @@ class Doubly_Linked_List:
         newNode.next = self.tail
         self.tail.prev = newNode
         self.count += 1 # Increase size by 1
-    def list_remove(self, data):
+
+    def remove(self, data):
         pointer = self.head # set pointer as head
         if self.head.next == self.tail:
             print("List is Empty") # if list is empty, print this message, and return
@@ -38,19 +40,32 @@ class Doubly_Linked_List:
                 self.count -= 1
                 return 
             pointer = pointer.next # Keep search next datas
-        if pointer.next == self.tail: # It means, there are no data which want to delete
-            print("There are No matched data")
-            return 
-    def list_print(self):
+        print("There are No matched data")
+        return 
+        
+    def lprint(self):
         pointer = self.head
         print("List data : ", end='')
         while pointer.next is not self.tail:
             pointer = pointer.next
             print(pointer.data, end=' ')
         print("")
-    def list_size(self):
+        
+    def ListSize(self):
         print("Total List Size : ", self.count)
         return 
+
+    def search(self, data):
+        pointer = self.head # set pointer as head
+        idx = 0
+        while pointer.next is not self.tail:
+            if pointer.next.data == data:
+                print("Data ", data, "Exist in Index #", idx)
+                return
+            idx += 1
+            pointer = pointer.next
+        print("There are No matched data")
+        return
+
     def is_empty(self):
         return self.head.next is self.tail # Return True or False
-
