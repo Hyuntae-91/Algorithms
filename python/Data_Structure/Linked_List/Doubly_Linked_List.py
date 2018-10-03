@@ -34,22 +34,23 @@ class Doubly_Linked_List:
                 temp = pointer.next
                 pointer.next = temp.next # point current Node's next pointer to next next Node
                 temp.next.prev = pointer # set temp's previous node to pointer
-                print("Remove successfully")
+                print("Remove", data, " successfully")
                 self.count -= 1
                 return 
             pointer = pointer.next # Keep search next datas
-        if pointer.next == None: # It means, there are no data which want to delete
-            print("There are No data")
+        if pointer.next == self.tail: # It means, there are no data which want to delete
+            print("There are No matched data")
             return 
     def list_print(self):
         pointer = self.head
+        print("List data : ", end='')
         while pointer.next is not self.tail:
             pointer = pointer.next
             print(pointer.data, end=' ')
         print("")
     def list_size(self):
-        print(self.count)
+        print("Total List Size : ", self.count)
         return 
     def is_empty(self):
-        return Head is None # Return True or False
+        return self.head.next is self.tail # Return True or False
 
