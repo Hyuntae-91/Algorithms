@@ -12,12 +12,14 @@ class Singly_Linked_List:
         self.head = Node(None) # Dummy Node
         self.tail = self.head
         self.count = 0
-    def list_add(self, data):
+
+    def append(self, data):
         newNode = Node(data) # Create New Node to add
         self.tail.next = newNode # Set tail's next node to New Node
         self.tail = newNode # Set tail point to New Node
         self.count += 1 # Increase size by 1
-    def list_remove(self, data):
+
+    def remove(self, data):
         pointer = self.head # set pointer as head
         if self.head.next == self.tail:
             print("List is Empty") # if list is empty, print this message, and return
@@ -29,19 +31,34 @@ class Singly_Linked_List:
                 self.count -= 1
                 return 
             pointer = pointer.next # Keep search next datas
-        if pointer.next == None: # It means, there are no data which want to delete
-            print("There are No matched data")
-            return 
-    def list_print(self):
+        print("There are No matched data")
+        return 
+
+    def lprint(self):
         pointer = self.head
         print("List data : ", end='')
         while pointer.next is not self.tail:
             pointer = pointer.next
             print(pointer.data, end=' ')
         print("")
-    def list_size(self):
+        return
+
+    def ListSize(self):
         print("Total List Size : ", self.count)
         return 
+
+    def search(self, data):
+        pointer = self.head # set pointer as head
+        idx = 0
+        while pointer.next is not self.tail:
+            if pointer.next.data == data:
+                print("Data ", data, "Exist in Index #", idx)
+                return
+            idx += 1
+            pointer = pointer.next
+        print("There are No matched data")
+        return
+
     def is_empty(self):
         return self.head.next is self.tail # Return True or False
 
