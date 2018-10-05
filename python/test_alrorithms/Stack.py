@@ -17,6 +17,7 @@ print("Stack Size : ", st1.StackSize())
 print("Is Empty? ", st1.is_empty())
 
 print("pop : ", st1.pop())
+print("Stack Peek : ", st1.peek())
 print("pop : ", st1.pop())
 print("pop : ", st1.pop())
 
