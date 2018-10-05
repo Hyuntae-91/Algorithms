@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 class Node:
-    def __init__(self):
-        self.data = -1
+    def __init__(self, data):
+        self.data = data 
         self.next = None
 
 class Queue:
     def __init__(self):
-        self.front = node(None) # Dummy node
+        self.front = Node(None) # Dummy node
         self.rear = None 
         self.front.next = self.rear # connect front to rear 
         self.count = 0
@@ -22,13 +22,13 @@ class Queue:
         pointer.next = newNode
         self.count += 1
 
-    def dequque(self, data):
+    def dequeue(self):
         if self.front.next is self.rear: # check the queue is empty
             print("Queue is Empty!")
             return -1
-        pointer = self.front.next
-        dequeued_data = pointer.data
-        pointer = pointer.next
+        pointer = self.front.next # set pointer as first node
+        dequeued_data = pointer.data # extract first node's data
+        self.front.next = pointer.next # set second node as a first node
         self.count -= 1
         return dequeued_data
 

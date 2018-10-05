@@ -14,3 +14,4 @@ Developed Data structure<br>
     - Linked List (Singly)<br>
     - Linked list (Doubly)<br>
     - Stack<br>
+    - Queue<br>
