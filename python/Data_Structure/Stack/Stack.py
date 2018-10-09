@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 class Node:
+    next = None
     def __init__(self, data):
         self.data = data
-        self.next = None
 
 class Stack:
     def __init__(self):
@@ -13,21 +13,21 @@ class Stack:
 
     def push(self, data):
         newNode = Node(data)
-        newNode.next = self.top
-        self.top = newNode
+        newNode.next = self.top 
+        self.top = newNode # Set NewNode as a top
         self.count += 1
 
     def pop(self):
-        if self.top is None:
+        if self.is_empty():
             print("Stack is Empty!")
             return -1
-        poped_data = self.top.data
-        self.top = self.top.next
+        poped_data = self.top.data # save data on top at poped_data
+        self.top = self.top.next # change top node
         self.count -= 1
         return poped_data
 
     def peek(self):
-        if self.top is None:
+        if self.is_empty():
             print("Stack is Empty!")
             return -1
         return self.top.data
