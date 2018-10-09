@@ -21,8 +21,8 @@ class Singly_Linked_List:
 
     def remove(self, data):
         pointer = self.head # set pointer as head
-        if self.head.next == self.tail:
-            print("List is Empty") # if list is empty, print this message, and return
+        if self.is_empty():
+            print("List is Empty") # if the list is empty, print this message, and return
             return
         while pointer.next is not self.tail: # Follow next pointer until end of list
             if pointer.next.data == data: # if next Node's data is same with data which want to delete

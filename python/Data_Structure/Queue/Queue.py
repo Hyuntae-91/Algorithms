@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 class Node:
+    next = None
     def __init__(self, data):
         self.data = data 
-        self.next = None
 
 class Queue:
     def __init__(self):
@@ -23,7 +23,7 @@ class Queue:
         self.count += 1
 
     def dequeue(self):
-        if self.front.next is self.rear: # check the queue is empty
+        if self.is_empty(): # check the queue is empty
             print("Queue is Empty!")
             return -1
         pointer = self.front.next # set pointer as first node
@@ -33,7 +33,7 @@ class Queue:
         return dequeued_data
 
     def Qpeek(self):
-        if self.front.next is self.rear:
+        if self.is_empty():
             print("Queue is Empty!")
             return -1
         return self.front.next.data
