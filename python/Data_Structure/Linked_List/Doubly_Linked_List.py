@@ -30,7 +30,7 @@ class Doubly_Linked_List:
         pointer = self.head # set pointer as head
         if self.is_empty(): 
             print("List is Empty") # if the list is empty, print this message, and return
-            return
+            return False
         while pointer.next is not self.tail: # Follow next pointer until end of list
             if pointer.next.data == data: # if next Node's data is same with data which want to delete
                 temp = pointer.next
@@ -38,10 +38,10 @@ class Doubly_Linked_List:
                 temp.next.prev = pointer # set temp's previous node to pointer
                 print("Remove", data, " successfully")
                 self.count -= 1
-                return 
+                return True
             pointer = pointer.next # Keep search next datas
         print("There are No matched data")
-        return 
+        return False
         
     def lprint(self):
         pointer = self.head
@@ -61,11 +61,11 @@ class Doubly_Linked_List:
         while pointer.next is not self.tail:
             if pointer.next.data == data:
                 print("Data ", data, "Exist in Index #", idx)
-                return
+                return True
             idx += 1
             pointer = pointer.next
         print("There are No matched data")
-        return
+        return False
 
     def is_empty(self):
         return self.head.next is self.tail # Return True or False
