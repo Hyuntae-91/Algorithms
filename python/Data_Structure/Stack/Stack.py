@@ -20,7 +20,7 @@ class Stack:
     def pop(self):
         if self.is_empty():
             print("Stack is Empty!")
-            return -1
+            return False
         poped_data = self.top.data # save data on top at poped_data
         self.top = self.top.next # change top node
         self.count -= 1
@@ -29,7 +29,7 @@ class Stack:
     def peek(self):
         if self.is_empty():
             print("Stack is Empty!")
-            return -1
+            return False
         return self.top.data
 
     def StackSize(self):
