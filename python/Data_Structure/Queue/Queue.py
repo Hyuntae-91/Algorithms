@@ -25,7 +25,7 @@ class Queue:
     def dequeue(self):
         if self.is_empty(): # check the queue is empty
             print("Queue is Empty!")
-            return -1
+            return False
         pointer = self.front.next # set pointer as first node
         dequeued_data = pointer.data # extract first node's data
         self.front.next = pointer.next # set second node as a first node
@@ -35,7 +35,7 @@ class Queue:
     def Qpeek(self):
         if self.is_empty():
             print("Queue is Empty!")
-            return -1
+            return False
         return self.front.next.data
 
     def Qsize(self):
