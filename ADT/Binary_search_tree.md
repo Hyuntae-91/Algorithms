@@ -10,7 +10,7 @@
         internal_insert(self, root, data) - insert Node at the BST
         delete(self, data) - Wrapper function
         internal_delete(self, root, data) - Delete data at the BST
-        FindMinNode(self, root) - Search Min Node at the Tree to delete data
+        LeftMostNode(self, root) - Search Min Node at the Tree to delete data
         BSTSize(self) - return the size
         is_empty(self) - Check is the BST empty
         traversal

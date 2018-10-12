@@ -20,22 +20,22 @@ class Binary_search_tree:
             self.count += 1
             return true
         else:
-            return internal_insert(self.root, data)
+            return _internal_insert(self.root, data)
 
-    def internal_insert(self, root, data):
+    def _internal_insert(self, root, data):
         if root.data == data:
             print("Same data already exist!")
             return False
         elif root.data > data:
             if root.left_child is not None:
-                return self.internal_insert(root.left_child, data)
+                return self._internal_insert(root.left_child, data)
             else:
                 self.count += 1
                 root.left_child = Node(data)
                 return True
         else:
             if root.right_child is not None:
-                return self.internal_insert(root.right_child, data)
+                return self._internal_insert(root.right_child, data)
             else:
                 self.count += 1
                 root.right_child = Node(data)
@@ -46,24 +46,53 @@ class Binary_search_tree:
         if self.root is None:
             print("The Tree is empty!")
             return False
-        return self.internal_delete(self.root, data)
+        return self._internal_delete(self.root, data)
 
-    def internal_delete(self, root, data):
+    def _internal_delete(self, root, data):
         if root is None:
             print("There are no data what you want to delete!")
             return False
 
         if root.data > data:
-            internal_delete(root.left_child, data)
+            self._internal_delete(root.left_child, data)
         elif root.data < data:
-            internal_delete(root.right.child, data)
+            self._internal_delete(root.right.child, data)
         else:
-            if (root.left_child is None) and (root.right_child is None):
-                pass
-       
+            if root.data is data:
+                if (root.left_child is None) and (root.right_child is None): # Leaf Node
+                    root = None
+                    print("Data ", data, " is successfully deleted")
+                    return True
+                elif (root.left_child is not None) and (root.right_child is not None): # if has two children
+                    self._replace_Node(root, self._LeftMostNode(root.right_child))
+                elif (root.left_child is not None) and (root.right_child is None): # if has a left child
+                    self._replace_Node(root, root.left_child)
+                else:
+                    self._replace_Node(root, root.right_child)
+                return True
+            elif root.data > data:
+                return self._internal_delete(root.left, data)
+            else:
+                return self._internal_delete(root.right, data)
 
-    def FindMinNode(self, root):
-        pass
+            return False
+
+                
+    def _LeftMostNode(self, root):
+        while root.left_child is not None:
+            root = root.left_child
+        return root
+
+    def _replace_Node(self, replace, new):
+        if (replace is None) or (new is None):
+            return False
+
+        if (replace.left_child is not None) and (replace.right_child is not None):
+            new.left_child = replace.left_child
+            if replace.right_child is not new:
+                new.right_child = replace.right_child
+        replace = new
+
 
     def BSTSize(self):
         return self.count
