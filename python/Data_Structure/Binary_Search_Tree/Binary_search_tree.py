@@ -24,17 +24,18 @@ class Binary_search_tree:
 
     def internal_insert(self, root, data):
         if root.data == data:
+            print("Same data already exist!")
             return False
         elif root.data > data:
             if root.left_child is not None:
-                return internal_insert(root.left_child, data)
+                return self.internal_insert(root.left_child, data)
             else:
                 self.count += 1
                 root.left_child = Node(data)
                 return True
         else:
             if root.right_child is not None:
-                return internal_insert(root.right_child, data)
+                return self.internal_insert(root.right_child, data)
             else:
                 self.count += 1
                 root.right_child = Node(data)
@@ -42,9 +43,26 @@ class Binary_search_tree:
 
 
     def delete(self, data):
-        self.count -= 1
+        if self.root is None:
+            print("The Tree is empty!")
+            return False
+        return self.internal_delete(self.root, data)
 
-    def search(self, data):
+    def internal_delete(self, root, data):
+        if root is None:
+            print("There are no data what you want to delete!")
+            return False
+
+        if root.data > data:
+            internal_delete(root.left_child, data)
+        elif root.data < data:
+            internal_delete(root.right.child, data)
+        else:
+            if (root.left_child is None) and (root.right_child is None):
+                pass
+       
+
+    def FindMinNode(self, root):
         pass
 
     def BSTSize(self):
