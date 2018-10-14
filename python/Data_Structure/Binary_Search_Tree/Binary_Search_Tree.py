@@ -9,7 +9,7 @@ class Node:
     def __init__(self, data):
         self.data = data
 
-class Binary_search_tree:
+class Binary_Search_Tree:
     def __init__(self):
         self.root = None
         self.count = 0
@@ -18,9 +18,9 @@ class Binary_search_tree:
         if self.is_empty():
             self.root = Node(data)
             self.count += 1
-            return true
+            return True
         else:
-            return _internal_insert(self.root, data)
+            return self._internal_insert(self.root, data)
 
     def _internal_insert(self, root, data):
         if root.data == data:
@@ -49,10 +49,6 @@ class Binary_search_tree:
         return self._internal_delete(self.root, data)
 
     def _internal_delete(self, root, data):
-        if root is None:
-            print("There are no data what you want to delete!")
-            return False
-
         if root.data > data:
             self._internal_delete(root.left_child, data)
         elif root.data < data:
@@ -74,7 +70,6 @@ class Binary_search_tree:
                 return self._internal_delete(root.left, data)
             else:
                 return self._internal_delete(root.right, data)
-
             return False
 
                 
@@ -95,9 +90,45 @@ class Binary_search_tree:
 
 
     def BSTSize(self):
-        return self.count
+        print("Total BST Size : ", self.count)
+        return 
 
     def is_empty(self):
         return self.root is None
 
+    
+    def preorder(self):
+        print("- Preorder Traversal")
+        self._internal_preorder(self.root)
+        print("")
 
+    def _internal_preorder(self, root):
+        print(root.data, end=" ")
+        if root.left_child is not None:
+            self._internal_preorder(root.left_child)
+        if root.right_child is not None:
+            self._internal_preorder(root.right_child)
+
+    def postorder(self):
+        print("- Postorder Traversal")
+        self._internal_postorder(self.root)
+        print("")
+
+    def _internal_postorder(self, root):
+        if root.left_child is not None:
+            self._internal_postorder(root.left_child)
+        if root.right_child is not None:
+            self._internal_postorder(root.right_child)
+        print(root.data, end=" ")
+
+    def inorder(self):
+        print("- Inorder Traversal")
+        self._internal_inorder(self.root)
+        print("")
+
+    def _internal_inorder(self, root):
+        if root.left_child is not None:
+            self._internal_inorder(root.left_child)
+        print(root.data, end=" ")
+        if root.right_child is not None:
+            self._internal_inorder(root.right_child)
