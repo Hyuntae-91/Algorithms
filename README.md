@@ -1,17 +1,18 @@
 # My_Algorithms
 This is Hyuntae's repository to practice Data structure & algorithms
 
-Developed Enviroment<br>
-    - Ubuntu 18.04<br>
-    - Neovim<br>
+## Developed Enviroment
+    - Ubuntu 18.04
+    - Neovim
 
 
-Developing Language<br>
-    - Python 3.6.4<br>
+## Developing Language
+    - Python 3.6.4
 
 
-Developed Data structure<br>
-    - Linked List (Singly)<br>
-    - Linked list (Doubly)<br>
-    - Stack<br>
-    - Queue<br>
+## Developed Data structure
+    - Linked List (Singly)
+    - Linked list (Doubly)
+    - Stack
+    - Queue
+    - Binary Search Tree
