@@ -6,10 +6,9 @@
 
     - Binary Search Tree Functions
         init(self) - Initiate BST
-        insert(self, data) - Wrapper function
-        delete(self, data) - Wrapper function
-        LeftMostNode(self, root) - Search Min Node at the Tree to delete data
-        replace_Node(self, replace, new)
+        insert(self, data) - insert data in BST
+        delete(self, data) - delete data at BST
+        replace_Node(self, cnode, lmost, data)
         BSTSize(self) - return the size
         is_empty(self) - Check is the BST empty
         traversal
