@@ -48,45 +48,56 @@ class Binary_Search_Tree:
             return False
         return self._internal_delete(self.root, data)
 
-    def _internal_delete(self, root, data):
-        if root.data > data:
-            self._internal_delete(root.left_child, data)
-        elif root.data < data:
-            self._internal_delete(root.right.child, data)
-        else:
-            if root.data is data:
-                if (root.left_child is None) and (root.right_child is None): # Leaf Node
-                    root = None
-                    print("Data ", data, " is successfully deleted")
-                    return True
-                elif (root.left_child is not None) and (root.right_child is not None): # if has two children
-                    self._replace_Node(root, self._LeftMostNode(root.right_child))
-                elif (root.left_child is not None) and (root.right_child is None): # if has a left child
-                    self._replace_Node(root, root.left_child)
-                else:
-                    self._replace_Node(root, root.right_child)
+    def _internal_delete(self, cnode, data):
+        if cnode.data is data:
+            if (cnode.left_child is None) and (cnode.right_child is None): # Leaf Node
+                cnode = None
+                print("Data ", data, " is successfully deleted")
                 return True
-            elif root.data > data:
-                return self._internal_delete(root.left, data)
-            else:
-                return self._internal_delete(root.right, data)
-            return False
+            elif (cnode.left_child is not None) and (cnode.right_child is not None): # if has two children
+                self._replace_node(cnode, cnode.right_child, data)
+            elif (cnode.left_child is not None) and (cnode.right_child is None): # if has a left child
+                self._replace_node(cnode, cnode.left_child, data)
+            else:                                                                   # if has a right child
+                self._replace_node(cnode, right_child, data)
+        elif cnode.data > data:
+            self._internal_delete(cnode.left_child, data)
+        else:
+            self._internal_delete(cnode.right_child, data)
 
+
+    def _replace_node(self, cnode, lmost, data):                            # I think this function need refactoring
+        lmost_p = cnode
+        while lmost.left_child is not None:
+            lmost_p = lmost
+            lmost = lmost.left_child
+
+        if cnode.right_child is lmost:
+            lmost.left_child = cnode.left_child
+            temp_node = self.root
+            while True:
+                if temp_node.left_child is cnode:
+                    flag = 0
+                    break
+                elif temp_node.right_child is cnode:
+                    flag = 1
+                    break
                 
-    def _LeftMostNode(self, root):
-        while root.left_child is not None:
-            root = root.left_child
-        return root
+                if temp_node.data > data:
+                    temp_node = temp_node.left_child
+                else:
+                    temp_node = temp_node.right_child
 
-    def _replace_Node(self, replace, new):
-        if (replace is None) or (new is None):
-            return False
-
-        if (replace.left_child is not None) and (replace.right_child is not None):
-            new.left_child = replace.left_child
-            if replace.right_child is not new:
-                new.right_child = replace.right_child
-        replace = new
+            if flag is 0:
+                temp_node.left_child = lmost
+            else:
+                temp_node.right_child = lmost
+        else:
+            cnode.data = lmost.data
+            if lmost.right_child is None:
+                lmost_p.left_child = None
+            else:
+                lmost_p.left_child = lmost.right_child
 
 
     def BSTSize(self):
