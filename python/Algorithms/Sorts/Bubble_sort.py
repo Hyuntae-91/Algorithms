@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-def Bubble_sort(unsorted_list):
-    list_length = len(unsorted_list)
-    new_list = unsorted_list
+def Bubble_sort(_list):
+    list_length = len(_list)
 
     for i in range(list_length - 1):
         for j in range(1, list_length):
-            if new_list[j-1] > new_list[j]:
-                new_list[j - 1], new_list[j] = new_list[j], new_list[j - 1]
+            if _list[j-1] > _list[j]:
+                _list[j - 1], _list[j] = _list[j], _list[j - 1]
 
-    return new_list
+    return _list

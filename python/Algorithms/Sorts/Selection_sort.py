@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-def Selection_sort(unsorted_list):
-    list_length = len(unsorted_list)
-    new_list = unsorted_list
+def Selection_sort(_list):
+    list_length = len(_list)
 
     for i in range(list_length - 1):
         min = i
         for j in range(i+1, list_length):
-            if new_list[min] > new_list[j]:
+            if _list[min] > _list[j]:
                 min = j
         if min is not i:
-            new_list[min], new_list[i] = new_list[i], new_list[min]
+            _list[min], _list[i] = _list[i], _list[min]
 
-    return new_list
+    return _list
