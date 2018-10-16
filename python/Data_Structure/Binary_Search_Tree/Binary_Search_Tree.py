@@ -51,7 +51,8 @@ class Binary_Search_Tree:
     def _internal_delete(self, cnode, data):
         if cnode.data is data:
             if (cnode.left_child is None) and (cnode.right_child is None): # Leaf Node
-                cnode = None
+                del cnode
+                self.count -= 1
                 print("Data ", data, " is successfully deleted")
                 return True
             elif (cnode.left_child is not None) and (cnode.right_child is not None): # if has two children
@@ -60,6 +61,7 @@ class Binary_Search_Tree:
                 self._replace_node(cnode, cnode.left_child, data)
             else:                                                                   # if has a right child
                 self._replace_node(cnode, right_child, data)
+            self.count -= 1
         elif cnode.data > data:
             self._internal_delete(cnode.left_child, data)
         else:
@@ -98,6 +100,7 @@ class Binary_Search_Tree:
                 lmost_p.left_child = None
             else:
                 lmost_p.left_child = lmost.right_child
+        del cnode
 
 
     def BSTSize(self):
