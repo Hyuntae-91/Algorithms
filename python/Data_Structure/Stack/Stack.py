@@ -22,7 +22,9 @@ class Stack:
             print("Stack is Empty!")
             return False
         poped_data = self.top.data # save data on top at poped_data
+        temp = self.top
         self.top = self.top.next # change top node
+        del temp
         self.count -= 1
         return poped_data
 
