@@ -16,27 +16,32 @@
 ### Pseudocode:
     pseudocode Partiton(A : list of sortable items, start, end):
         pivot = A[(start + end) / 2]
-        swap(pivot, A[end])
-        i = start
-        j = end - 1
-        while True
-            if i > j
-                swap(A[i], pivot)
-                break
+        left = 0
+        right = end
+        while left < right
+            while A[left] < pivot and left < right 
+                left = left + 1
+            end while
+
+            while A[right] > pivot and left < right
+                right = right - 1
+            end while
+
+            if left < right
+                swap(A[left], A[right])
             end if
-
-            if A[i] <= pivot and i <= j
-                i = i + 1
-            else if A[i] > pivot and i <= j
-                j = j - 1
-
         end while
 
+        swap(pivot, A[j])
+        return i        
     end procedure
 
 
-    procedure Quick_sort( A : list of sortable items )
-        list_length = len(A)
+    procedure Quick_sort( A : list of sortable items, start, end )
+        if start < end
+            p = Partition(A, start, end)
+            Quick_sort(A, start, p - 1)
+            Quick_sort(A, p + 1, end)
 
     end procedure
 
