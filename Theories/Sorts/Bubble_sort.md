@@ -6,7 +6,7 @@
                                             - from Wikipedia
 
 
-    ### Pseudocode:
+### Pseudocode:
     procedure bubblesort( A : list of sortable items )
         list_length = length(A)
         for i = 0 to list_length - 1
@@ -19,7 +19,7 @@
     end procedure
 
 
-    ### Python enviroment
+### Python enviroment
     - Input type : list
     - Return type : list
 

@@ -13,7 +13,7 @@
       Also, this algorithm is in-place sort.
 
 
-    ### Pseudocode:
+### Pseudocode:
     pseudocode Partiton(A : list of sortable items, start, end):
         pivot = A[(start + end) / 2]
         swap(pivot, A[end])
@@ -41,7 +41,7 @@
     end procedure
 
 
-    ### Python enviroment
+### Python enviroment
     - Input type : list
     - Return type : list
 
