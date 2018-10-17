@@ -6,7 +6,7 @@
       And In-place sort algorithm.
 
 
-    ### Pseudocode:
+### Pseudocode:
     procedure Insertion_sort( A : list of sortable items )
         list_length = len(A)
         i = 1
@@ -21,7 +21,7 @@
     end procedure
 
 
-    ### Python enviroment
+### Python enviroment
     - Input type : list
     - Return type : list
 
