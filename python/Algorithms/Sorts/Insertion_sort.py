@@ -6,10 +6,12 @@ def Insertion_sort(_list):
 
     i = 1
     while i < list_length:
-        j = i
-        while j > 0 and _list[j-1] > _list[j]:
-            _list[j-1], _list[j] = _list[j], _list[j-1]
+        key = _list[i]
+        j = i - 1
+        while j >= 0 and _list[j] > key:
+            _list[j+1] = _list[j]
             j -= 1
+        _list[j+1] = key
         i += 1
 
     return _list
