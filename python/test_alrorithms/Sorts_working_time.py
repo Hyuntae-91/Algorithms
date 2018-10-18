@@ -10,10 +10,10 @@ sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from Algorithms.Sorts import *
 
 li = []
-SIZE = 10000
+SIZE = 10000                    # create SIZE of random integer list for checking working time
 rand_num = random.randint(0, SIZE)
 
-for i in range(SIZE):              # create 10,000 random integer list for checking working time
+for i in range(SIZE):              
     while rand_num in li:
         rand_num = random.randint(0, SIZE)
 
