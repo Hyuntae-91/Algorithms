@@ -24,3 +24,5 @@ This is Hyuntae's repository to practice Data structure & algorithms
    - [Bubble Sorts](python/Algorithms/Sorts/Bubble_sort.py)
    - [Selection Sorts](python/Algorithms/Sorts/Selection_sort.py)
    - [Insertion Sorts](python/Algorithms/Sorts/Insertion_sort.py)
+   - [Quick Sorts](python/Algorithms/Sorts/Quick_sort.py)
+   - [Merge Sorts](python/Algorithms/Sorts/Merge_sort.py)
