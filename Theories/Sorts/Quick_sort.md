@@ -14,36 +14,36 @@
 
 
 ### Pseudocode:
-    pseudocode Partiton(A : list of sortable items, start, end):
-        pivot = A[(start + end) / 2]
+    pseudocode Partiton(A : list of sortable items, first, last):
+        pivot = A[(first + last) / 2]
         left = 0
-        right = end
+        right = last
         while left < right
             while A[left] < pivot and left < right 
                 left = left + 1
-            end while
+            last while
 
             while A[right] > pivot and left < right
                 right = right - 1
-            end while
+            last while
 
             if left < right
                 swap(A[left], A[right])
-            end if
-        end while
+            last if
+        last while
 
         swap(pivot, A[j])
         return i        
-    end procedure
+    last procedure
 
 
-    procedure Quick_sort( A : list of sortable items, start, end )
-        if start < end
-            p = Partition(A, start, end)
-            Quick_sort(A, start, p - 1)
-            Quick_sort(A, p + 1, end)
+    procedure Quick_sort( A : list of sortable items, first, last )
+        if first < last
+            p = Partition(A, first, last)
+            Quick_sort(A, first, p - 1)
+            Quick_sort(A, p + 1, last)
 
-    end procedure
+    last procedure
 
 
 ### Python enviroment
