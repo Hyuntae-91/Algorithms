@@ -1,31 +1,38 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+def qs_swap(_list, l, r):
+    _list[l], _list[r] = _list[r], _list[l]
+
 def Quick_sort(_list):
     if len(_list) <= 1:
         return _list
 
-    mid = Partition(_list)
-    left = _list[:mid]
-    right = _list[mid:]
-    left = Quick_sort(left)
-    right = Quick_sort(right)
-    return left + right
+    p = Partition(_list)
+    left = _list[:p]
+    right = _list[p:]
+    return Quick_sort(left) + Quick_sort(right)
 
 def Partition(_list):
-    pivot = _list[int((len(_list)) / 2)]
+    pivot = int((len(_list)) / 2)
     left = 0 
     right = len(_list) - 1
+    qs_swap(_list, pivot, right)
+    pivot = right
 
     while left < right:
-        while (_list[left] < pivot) and (left < right):
+        while (_list[left] < _list[pivot]) and (left < right):
             left += 1
-        while (_list[right] >= pivot) and (left < right):
+        while (_list[right] >= _list[pivot]) and (left < right):
             right -= 1
 
         if left < right:
-            _list[left], _list[right] = _list[right], _list[left]
+            qs_swap(_list, left, right)
+            left += 1
+            right -= 1
 
-    pivot, _list[right] = _list[right], pivot
 
-    return left
+    if _list[pivot] < _list[right]:
+        qs_swap(_list, pivot, right)
+
+    return left 
