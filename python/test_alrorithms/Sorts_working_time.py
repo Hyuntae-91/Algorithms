@@ -8,10 +8,11 @@ import random
 
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from Algorithms.Sorts import *
+from Algorithms.Sorts.Heap_sort import *
 
 li = []
 LIST_SIZE = 10000           
-NUM_SCOPE = 100000          
+NUM_SCOPE = 100000        
 rand_num = random.randint(0, NUM_SCOPE)
 
 for i in range(LIST_SIZE):              
@@ -62,4 +63,14 @@ print("")
 start_time = time.time()
 print("== Merge Sorts ==")
 Merge_sort.Merge_sort(copied_li)
+print("--- %.7s Seconds ---" % (time.time() - start_time))
+
+
+
+copied_li = li[:]
+print("")
+print("")
+start_time = time.time()
+print("== Heap Sorts ==")
+Heap_sort.Heap_sort(copied_li)
 print("--- %.7s Seconds ---" % (time.time() - start_time))
