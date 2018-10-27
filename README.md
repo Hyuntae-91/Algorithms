@@ -26,7 +26,7 @@ This is Hyuntae's repository to practice Data structure & algorithms
    - [Insertion Sorts](python/Algorithms/Sorts/Insertion_sort.py)
    - [Quick Sorts](python/Algorithms/Sorts/Quick_sort.py)
    - [Merge Sorts](python/Algorithms/Sorts/Merge_sort.py)
-   - [Heap Sorts](python/Algorithms/Sorts/Heap_sort/Heap_sort.py)
+   - [Heap Sorts](python/Algorithms/Sorts/Heap_sort/Heap_sort.py) / [Fix Heap](python/Algorithms/Sorts/Heap_sort/fixHeap.py) / [Construct Heap](python/Algorithms/Sorts/Heap_sort/Construct_heap.py)
 
 You can check "Working time" of Each sorting algorithms on this link
 [Sorts_Working_time](python/test_alrorithms/Sorts_working_time.py)

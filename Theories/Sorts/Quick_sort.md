@@ -21,20 +21,20 @@
         while left < right
             while A[left] < pivot and left < right 
                 left = left + 1
-            last while
+            end while
 
             while A[right] > pivot and left < right
                 right = right - 1
-            last while
+            end while
 
             if left < right
                 swap(A[left], A[right])
-            last if
-        last while
+            end if
+        end while
 
         swap(pivot, A[j])
         return i        
-    last procedure
+    end procedure
 
 
     procedure Quick_sort( A : list of sortable items, first, last )
@@ -42,8 +42,9 @@
             p = Partition(A, first, last)
             Quick_sort(A, first, p - 1)
             Quick_sort(A, p + 1, last)
+        end if
 
-    last procedure
+    end procedure
 
 
 ### Python enviroment
