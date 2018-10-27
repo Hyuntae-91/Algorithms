@@ -6,9 +6,9 @@ from .Construct_heap import Construct_heap
 
 def Heap_sort(_list):
     list_size = len(_list) - 1
-    Construct_heap(_list, 1, list_size)
+    Construct_heap(_list, 0, list_size)
 
-    for i in range(list_size, 1, -1):
+    for i in range(list_size, 0, -1):
         curMax = _list[0]
         key = _list[i]
         fixHeap(_list, 0, key, i)
