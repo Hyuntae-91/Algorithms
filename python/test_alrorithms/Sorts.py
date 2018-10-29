@@ -56,3 +56,11 @@ print("")
 print("== Heap Sorts ==")
 print(Heap_sort.Heap_sort(copied_li))
 print("==================")
+
+
+copied_li = li[:]
+print("")
+print("")
+print("== Acceleated Heap Sorts ==")
+print(Acceleated_Heap_sort.Acceleated_Heap_sort(copied_li))
+print("==================")
