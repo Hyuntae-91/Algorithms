@@ -1,7 +1,18 @@
 # Theory of Heap sort
 
-    - 
+Heap
+ - Heap data structure is a binary tree with special properties.
+   When the following conditions are satisfied, we can call a binary tree(T) as a Heap structure
+        - T is complete at least through depth h - 1
+        - All leaves are at depth h or h - 1
+        - All path to a leaf of depth h are to the left of all paths to a leaf of depth h - 1
 
+Heap sort
+ - This sort algorithm has nlogn worst case runtime.
+   If the elements to be sorted are arranged in a heap(Min or Max)
+    - We can build a sorted sequence in reverse order by repeatedly removing the element from the root
+    - Rearranging the remaining elements to reestablish the partial order tree property, and so on.
+   
 
 ### Pseudocode:
     pseudocode Construct_heap(A : list of sortable items, root, size):
@@ -33,7 +44,7 @@
     end procedure
 
 
-    procedure Quick_sort( A : list of sortable items)
+    procedure Heap_sort(A : list of sortable items)
         list_size = (length of A) - 1
         Construct_heap(A, 0, list_size)
 
