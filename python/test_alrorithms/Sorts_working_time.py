@@ -74,3 +74,13 @@ start_time = time.time()
 print("== Heap Sorts ==")
 Heap_sort.Heap_sort(copied_li)
 print("--- %.7s Seconds ---" % (time.time() - start_time))
+
+
+
+copied_li = li[:]
+print("")
+print("")
+start_time = time.time()
+print("== Acceleated Heap Sorts ==")
+Acceleated_Heap_sort.Acceleated_Heap_sort(copied_li)
+print("--- %.7s Seconds ---" % (time.time() - start_time))
