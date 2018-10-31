@@ -8,6 +8,10 @@ Acceleated Heap sort
     - test whether K is bigger than the parent of vacant
     - Yes : bubble the vacant back up to where K should be
     - No : repeat filter the vacant position another halfway down recursively
+
+ - In theory, the worst case is nlogn + setta(nloglog(n)).
+   So, It should be more fast than Heap Sort. Because Heap sort has 2nlog(n) + O(n) worst case.
+   But, In real, Acceleated Heap Sort is more slow than Heap sort.
    
 
 ### Pseudocode:
