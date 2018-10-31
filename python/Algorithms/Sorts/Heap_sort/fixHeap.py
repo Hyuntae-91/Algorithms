@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 def fixHeap(_list, root, key, size):
-    if 2*root + 1 >= size: # if root node is leaf node
+    if 2*root + 1 > size: # if root node is leaf node
         _list[root] = key
     else:
         LargerSubHeap = 2*root + 1
