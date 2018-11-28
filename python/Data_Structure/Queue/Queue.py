@@ -29,6 +29,7 @@ class Queue:
         pointer = self.front.next # set pointer as first node
         dequeued_data = pointer.data # extract first node's data
         self.front.next = pointer.next # set second node as a first node
+        del pointer
         self.count -= 1
         return dequeued_data
 

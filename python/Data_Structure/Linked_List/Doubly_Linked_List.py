@@ -36,6 +36,7 @@ class Doubly_Linked_List:
                 temp = pointer.next
                 pointer.next = temp.next # point current Node's next pointer to next next Node
                 temp.next.prev = pointer # set temp's previous node to pointer
+                del temp
                 print("Remove", data, " successfully")
                 self.count -= 1
                 return True

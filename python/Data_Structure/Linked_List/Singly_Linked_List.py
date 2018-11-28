@@ -26,7 +26,9 @@ class Singly_Linked_List:
             return False
         while pointer.next is not self.tail: # Follow next pointer until end of list
             if pointer.next.data == data: # if next Node's data is same with data which want to delete
-                pointer.next = pointer.next.next # point current Node's next pointer to next next Node
+                temp = pointer.next
+                pointer.next = temp.next # point current Node's next pointer to next next Node
+                del temp
                 print("Remove ", data," successfully")
                 self.count -= 1
                 return True
