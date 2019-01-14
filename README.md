@@ -16,6 +16,7 @@ This is Hyuntae's repository to practice Data structure & algorithms
    - [Stack](python/Data_Structure/Stack/Stack.py)
    - [Queue](python/Data_Structure/Queue/Queue.py)
    - [Binary Search Tree](python/Data_Structure/Binary_Search_Tree/Binary_Search_Tree.py)
+   - [Red Black Search Tree](python/Data_Structure/Red_Black_Tree/Red_Black_Tree.py)
 
 
 

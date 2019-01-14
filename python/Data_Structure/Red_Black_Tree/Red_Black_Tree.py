@@ -16,6 +16,13 @@ class Node:
     def __init__(self, data):
         self.data = data
 
+    def get_color(self):
+        return self.color
+
+    def set_color(self, color):
+        self.color = color
+
+
 class Red_Black_Tree:
     def __init__(self):
         self.root = None
@@ -24,6 +31,7 @@ class Red_Black_Tree:
     def insert(self, data):
         if self.is_empty():
             self.root = Node(data)
+            slef.root.set_color = BLACK
             self.count += 1
             return True
         else:
@@ -78,3 +86,11 @@ class Red_Black_Tree:
         print(root.data, end=" ")
         if root.right_child is not None:
             self._internal_inorder(root.right_child)
+
+
+
+if __name__ == "__main__":
+    RBtree = Red_Black_Tree
+    
+    RBtree.insert(10)
+    
