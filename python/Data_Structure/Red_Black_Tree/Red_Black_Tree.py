@@ -2,19 +2,15 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
-from enum import Enum
 
-class COLOR(Enum):
-    RED = 0
-    BLACK = 1
+RED = 0
+BLACK = 1
 
 class Node:
-    color = 0
-    parent = None
-    left_child = None
-    right_child = None
     def __init__(self, data):
         self.data = data
+        self.parent = self.left_child = self.right_child = None
+        self.color = RED
 
     def get_color(self):
         return self.color
@@ -31,17 +27,59 @@ class Red_Black_Tree:
     def insert(self, data):
         if self.is_empty():
             self.root = Node(data)
-            slef.root.set_color = BLACK
+            self.root.set_color = BLACK
             self.count += 1
             return True
         else:
-            return self._internal_insert(self.root, data)
+            if(self._internal_insert(self.root, data)):
+                fixInsertRBtree(self.root, data)
+                self.root.set_color = BLACK
+            return 
+
+    def _internal_insert(self, root, data):
+        if root.data is data:
+            print("Same data already exist!")
+            return False
+        elif root.data > data:
+            if root.left_child is not None:
+                return self._internal_insert(root.left_child, data)
+            else:
+                self.count += 1
+                root.left_child = Node(data)
+                root.left_child.parent = root
+                return True
+        else:
+            if root.right_child is not None:
+                return self._internal_insert(root.right_child, data)
+            else:
+                self.count += 1
+                root.right_child = Node(data)
+                root.right_child.parent = root
+                return True
 
     def delete(self, data):
         if self.root is None:
             print("The Tree is empty!")
             return False
         return self._internal_delete(self.root, data)
+
+
+    def fixInsertRBtree(self, root, data):
+        if root.data > data:
+            self.fixInsertRBtree(root.left_child, data)
+        elif root.data < data:
+            self.fixInsertRBtree(root.right_child, data)
+        else:
+            cnode = root
+            parent = root.parent
+            grandparent = parent.parent
+            while (root is not self.root) and (root.get_color is RED) and (root.parent.get_color is RED):
+
+                a=10
+
+
+
+
 
     def RBTSize(self):
         print("Total BST Size : ", self.count)
@@ -86,11 +124,3 @@ class Red_Black_Tree:
         print(root.data, end=" ")
         if root.right_child is not None:
             self._internal_inorder(root.right_child)
-
-
-
-if __name__ == "__main__":
-    RBtree = Red_Black_Tree
-    
-    RBtree.insert(10)
-    
